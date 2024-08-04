@@ -1,0 +1,25 @@
+.left-button-shadow {
+    -fx-effect: dropshadow(one-pass-box, black, 12, 0.8, 4, 4);
+}
+
+.left-button-shadow:disabled {
+    -fx-effect: null;
+}
+
+.left-button-shadow:pressed {
+    -fx-effect: null;
+    -fx-translate-x: 3;
+    -fx-translate-y: 3;
+}
+
+.left-button {
+    -fx-background-color: #409775;
+}
+
+.left-button:hover {
+    -fx-background-color:  #265B46;
+}
+
+.left-box-shadow {
+    -fx-effect: dropshadow(one-pass-box, black, 10, 0.9, 3, 3);
+}
