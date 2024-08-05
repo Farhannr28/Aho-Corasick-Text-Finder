@@ -1,11 +1,13 @@
 package com.textfinder.controller;
 
+import com.textfinder.service.AhoCorasick;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.fxml.Initializable;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class MainSceneController implements Initializable {
@@ -39,7 +41,7 @@ public class MainSceneController implements Initializable {
     }
 
     public void clickedSelectFileButton(MouseEvent e) {
-        System.out.println("clickedSelectFileButton");
+        // System.out.println("clickedSelectFileButton");
         fileController.selectFile();
         text = fileController.getInputText();
         patterns = fileController.getInputPatterns();
@@ -48,7 +50,8 @@ public class MainSceneController implements Initializable {
         searchButton.setDisable(false);
     }
     public void clickedSearchButton(MouseEvent e) {
-        System.out.println("clickedSearchButton");
-
+        // System.out.println("clickedSearchButton");
+        AhoCorasick ac = new AhoCorasick(text, patterns);
+        ac.getAutomaton().printResults();
     }
 }

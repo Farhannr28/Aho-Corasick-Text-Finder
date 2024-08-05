@@ -27,7 +27,7 @@
    <children>
       <AnchorPane style="-fx-background-color: #FFFFFF;">
          <children>
-            <Label layoutX="23.0" layoutY="21.0" prefHeight="86.0" prefWidth="393.0" text="Text Finder" textFill="#33795e" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0">
+            <Label layoutX="23.0" layoutY="21.0" prefHeight="86.0" prefWidth="452.0" text="TEXT FINDER" textFill="#33795e" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0">
                <font>
                   <Font name="Futura Md BT Bold Italic" size="70.0" />
                </font>
@@ -115,21 +115,21 @@
        </AnchorPane>
       <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #265B46;" GridPane.columnIndex="1" GridPane.rowSpan="2">
          <children>
-            <ScrollPane maxHeight="230.0" maxWidth="450.0" prefHeight="220.0" prefWidth="450.0" StackPane.alignment="CENTER_RIGHT">
+            <ScrollPane maxHeight="240.0" maxWidth="320.0" prefHeight="240.0" prefWidth="320.0" StackPane.alignment="CENTER_LEFT">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
               </content>
                <StackPane.margin>
-                  <Insets right="20.0" />
+                  <Insets left="20.0" />
                </StackPane.margin>
             </ScrollPane>
-            <Label alignment="TOP_RIGHT" prefHeight="123.0" prefWidth="234.0" text="WordCount" textAlignment="RIGHT" textFill="WHITE" wrapText="true" StackPane.alignment="BOTTOM_LEFT">
+            <Label alignment="TOP_RIGHT" prefHeight="73.0" prefWidth="218.0" text="RESULT" textFill="WHITE" StackPane.alignment="TOP_RIGHT">
                <font>
-                  <Font name="Futura Md BT Bold Italic" size="50.0" />
+                  <Font name="Futura Md BT Bold Italic" size="60.0" />
                </font>
-               <padding>
-                  <Insets left="90.0" />
-               </padding>
+               <StackPane.margin>
+                  <Insets right="20.0" />
+               </StackPane.margin>
             </Label>
          </children>
       </StackPane>
