@@ -9,7 +9,7 @@ public class State {
 
     public static final int NULL_INT = -1;
 
-    private final String stateName;
+    private String stateName;
     private Map<Character, Integer> transitions;
     private final int root;
     private boolean acceptingState;
@@ -21,12 +21,20 @@ public class State {
         return this.stateName;
     }
 
+    public void setName(String s){
+        this.stateName = s;
+    }
+
     public void setTransition(char c, int x){
         this.transitions.put(c, x);
     }
 
     public int getTransition(char c){
         return this.transitions.getOrDefault(c, NULL_INT);
+    }
+
+    public Map<Character, Integer> getTransitionMap(){
+        return this.transitions;
     }
 
     public int getRoot(){

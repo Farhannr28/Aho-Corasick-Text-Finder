@@ -5,20 +5,14 @@ import java.util.ArrayList;
 public class Automaton {
     private ArrayList<State> states;
 
+    public ArrayList<State> getStates(){
+        return this.states;
+    }
+
     public void printStates(){
         int i=0;
         for(State state : this.states){
             System.out.println(i + " " + state.getName() + " " + state.getLink() + " " +  state.getNearestAccepting() + " " + state.isAcceptingState());
-            i++;
-        }
-    }
-
-    public void printResults(){
-        int i=0;
-        for(State state : this.states){
-            System.out.print(state.getName() + ": ");
-            state.printMatchingIndexes();
-            System.out.println();
             i++;
         }
     }
@@ -116,12 +110,5 @@ public class Automaton {
             addString(pattern);
         }
         createExitLink();
-    }
-
-    public static void main(String[] args){
-        Automaton a = new Automaton(new String[]{"saya", "aman", "ayam"});
-        a.printStates();
-        a.runText("saya sangat suka matkul irk. saya jadi ingin makan ayam.");
-        a.printResults();
     }
 }

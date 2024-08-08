@@ -21,5 +21,49 @@
 }
 
 .left-box-shadow {
-    -fx-effect: dropshadow(one-pass-box, black, 10, 0.9, 3, 3);
+    -fx-effect: dropshadow(one-pass-box, black, 10, 0.7, 3, 3);
+}
+
+.right-box-shadow {
+    -fx-effect: dropshadow(one-pass-box, rgba(255, 255, 255, 0.4), 10, 0.7, 3, 3);
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-shape: null;
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+    -fx-max-width: 0;
+    -fx-max-height: 0;
+    -fx-min-width: 0;
+    -fx-min-height: 0;
+    -fx-pref-width: 0;
+    -fx-pref-height: 0;
+}
+
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.track {
+    -fx-background-color: rgba(240, 240, 240, 0.2);
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.2), 6, 0.5, 0, 0);
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #E0E0E0;
+    -fx-background-radius: 20;
+    -fx-border-color: #A0A0A0;
+    -fx-border-width: 2;
+    -fx-border-radius: 20;
+}
+
+.scroll-pane .corner {
+    -fx-background-color: rgba(240, 240, 240, 0.2);
+    -fx-padding: 0;
+    -fx-min-width: 0;
+    -fx-min-height: 0;
+    -fx-pref-width: 0;
+    -fx-pref-height: 0;
 }

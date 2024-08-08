@@ -2,16 +2,14 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.textfinder</groupId>
-  <artifactId>text-finder</artifactId>
+  <artifactId>App</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>text-finder</name>
-  <url>http://maven.apache.org</url>
 
   <properties>
     <maven.compiler.source>22</maven.compiler.source>
     <maven.compiler.target>22</maven.compiler.target>
-    <javafx.version>21</javafx.version>
+    <javafx.version>22.0.2</javafx.version>
     <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
   </properties>
 
@@ -32,6 +30,17 @@
       <artifactId>javafx-fxml</artifactId>
       <version>${javafx.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-base</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+    <!-- smartgraph -->
+    <dependency>
+      <groupId>com.brunomnsilva</groupId>
+      <artifactId>smartgraph</artifactId>
+      <version>2.0.0</version>
+    </dependency>
     <!-- junit -->
     <dependency>
       <groupId>junit</groupId>
@@ -42,7 +51,13 @@
   </dependencies>
 
   <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
     <plugins>
+      <!-- Existing maven-compiler-plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -52,22 +67,34 @@
           <target>22</target>
         </configuration>
       </plugin>
+
       <plugin>
-        <groupId>org.openjfx</groupId>
-        <artifactId>javafx-maven-plugin</artifactId>
-        <version>${javafx.maven.plugin.version}</version>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.3.0</version>
         <configuration>
-          <mainClass>com.textfinder.App</mainClass>
+          <archive>
+            <manifest>
+              <mainClass>com.textfinder.App</mainClass> <!-- Adjust this to your main class -->
+            </manifest>
+          </archive>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
         </configuration>
         <executions>
           <execution>
+            <id>make-assembly</id> <!-- this is used for identification -->
+            <phase>package</phase> <!-- bind to the package phase -->
             <goals>
-              <goal>run</goal>
+              <goal>single</goal>
             </goals>
           </execution>
         </executions>
       </plugin>
+
     </plugins>
   </build>
+
 
 </project>
