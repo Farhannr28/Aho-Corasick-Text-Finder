@@ -1,5 +1,5 @@
 # Maven target directory
-
+target/
 
 # IDE-specific files
 .idea/
